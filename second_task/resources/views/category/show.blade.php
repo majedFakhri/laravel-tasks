@@ -1,8 +1,4 @@
-<h3>success
-    <?php 
-    echo $category->name.'   added'.'<br>';
-    
-    ?>
-    
-<a href="showAllCategory">  show All </a> </td>
+<h3>success <br>
+    {{$category->name}} added <br>
+    <a href="{{url('category')}}">show All</a>
 </h3>

@@ -7,22 +7,22 @@ use Illuminate\Http\Request;
 
 class OwnerController extends Controller
 {
-  
+
     public function index()
     {
-        
+
         $owner = Owner::all();
         return view('owner.showall', compact('owner'));
     }
 
-  
+
     public function create()
     {
         return view('owner.create');
 
     }
 
-   
+
     public function store(Request $request)
     {
 
@@ -30,8 +30,8 @@ class OwnerController extends Controller
             'name' => 'required',
         ]);
         $owner = Owner::create($request->all());
-        
-        return view('owner.show',compact('owner'))->with('success');  
+
+        return view('owner.show',compact('owner'))->with('success');
       }
 
 
@@ -53,19 +53,19 @@ class OwnerController extends Controller
         //
     }
 
-   
+
     public function edit(Owner $owner)
     {
         //
     }
 
-   
+
     public function update(Request $request, Owner $owner)
     {
         //
     }
 
-   
+
     public function destroy(Owner $owner)
     {
         //

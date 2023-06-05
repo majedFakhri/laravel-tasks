@@ -1,50 +1,30 @@
-
-
 <!DOCTYPE html>
 <html>
 <head>
 <title>Owners</title>
 </head>
 <body>
-
-
-
 <center>
-  
     <h2>Owners</h2>
-    
-    <br> <br>  
+    <br><br>
     <table border=1>
-     
         <tr>
-    
-        <td>Name</td>
-           
-        
+            <td>Name</td>
+            <td>add product</td>
+            <td>choose</td>
         </tr>
-           <tr>
-            <?php foreach($owner as $row){?>
-           <td><?php echo $row->name;?></td>
-           
-           <td><a href="addProductToOwner/<?php echo $row->id;?>">  add Product </a></td>
-
-           <!-- <td > <a href="edit/<?php echo $row->id;?>">  edit </a>||
-            <a href="deletefamily/<?php echo $row->id;?>">  delet </a> </td> -->
-             
-            
-             </tr>
-             <?php }?>
-             </table>
-          
-             <a href="addOwner"> <h3> add  </h3></a>  
-             <a href="/"> <h3> Home Page  </h3></a>  
-
-    
-    <br> <br>  
-    
-    </center>
-    
-
+        <tr>
+            @foreach($owner as $row)
+                <td>{{$row->name}}</td>
+                <td><a href="{{url('addProductToOwner/'.$row->id)}}">add Product</a></td>
+                <td > <a href="{{url('edit/'.$row->id)}}">edit</a>||<a href="{{url('deletefamily/'.$row->id)}}">delete</a></td>
+        </tr>
+            @endforeach
+    </table>
+    <a href="{{url('owner/create')}}"><h3>add</h3></a>
+    <a href="{{url('/')}}"><h3>Home Page</h3></a>
+    <br> <br>
+</center>
 </body>
 </html>
 

@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,11 +5,10 @@
 </head>
 <body>
 <center>
-
-<a href="showAllCategory"><h1>  show All </h1></a> 
- <a href="addCategory"> <h1> Add  </h1></a>  
-
-
+    <a href="{{url('category.index')}}"><h1>show All</h1></a>
+    <a href="{{url('category.create')}}"><h1>Add</h1></a>
+    <a href="{{url('/')}}"><h1>home</h1></a>
+</center>
 </body>
 </html>
 

@@ -9,29 +9,29 @@ class ProductController extends Controller
 {
     public function index()
     {
-       
+
         $product = Product::all();
         return view('product.showall', compact('product'));
     }
 
-   
+
     public function create()
     {
         return view('product.create');
 
     }
 
-    
+
     public function store(Request $request)
     {
-        
+
         $request->validate([
             'name' => 'required',
             'category_id' => 'required',
-            
+
         ]);
         $product = Product::create($request->all());
-        
+
         return view('product.show',compact('product'))->with('success');
     }
 

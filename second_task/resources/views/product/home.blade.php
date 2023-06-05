@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,11 +5,10 @@
 </head>
 <body>
 <center>
-
-<a href="showAllProduct"><h1>  show All </h1></a> 
- <a href="addProduct"> <h1> Add  </h1></a>  
-
-
+    <a href="{{url('showAllProduct')}}"><h1>show All</h1></a>
+    <a href="{{url('addProduct')}}"><h1>Add</h1></a>
+    <a href="{{url('/')}}"><h1>home</h1></a>
+</center>
 </body>
 </html>
 
