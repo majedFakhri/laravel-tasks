@@ -66,8 +66,14 @@ class OwnerController extends Controller
     }
 
 
-    public function destroy(Owner $owner)
+    public function destroy($id)
     {
-        //
+        $ow = Owner::find($id);
+        if ($ow) {
+            $ow->delete();
+        }
+        // return redirect()->back()->with('success', 'Owner Deleted Successfully');
+        $owner = Owner::all();
+        return view('owner.showall', compact('owner'));
     }
 }

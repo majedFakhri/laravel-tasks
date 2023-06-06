@@ -15,7 +15,7 @@
             @foreach($category as $row)
                 <tr>
                     <td>{{$row->name}}</td>
-                    <td> <a href="{{url('edit/'.$row->id)}}">  edit </a>||<a href="{{url('deletefamily/'.$row->id)}}">delete</a></td>
+                    <td> <a href="{{url('edit/'.$row->id)}}">  edit </a>||<a href="{{route('category.destroy', $row->id)}}">delete</a></td>
                 </tr>
             @endforeach
     </table>

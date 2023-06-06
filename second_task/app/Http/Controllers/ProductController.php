@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Http\Request;
 
@@ -55,19 +56,31 @@ class ProductController extends Controller
     }
 
 
-    public function edit(Product $product)
+    public function edit($id)
     {
-        //
+        $product = Product::find($id);
+        $category = Category::all();
+        return view('product.edit',compact('product','category'));
+        
     }
 
 
-    public function update(Request $request, Product $product)
+    public function update(Request $request)
     {
-        //
+
     }
 
-    public function destroy(Product $product)
+    public function destroy(int $id)
     {
-        //
+        $product = Product::find($id);
+        $product->category->detach();
+        $product->owners->detach();
+        $product->delete();
+        
+        // return redirect()->back()->with('success', 'Product Deleted Successfully');
+
+
+        $product = Product::all();
+        return view('product.showall', compact('roduct'));
     }
 }

@@ -29,7 +29,7 @@ class CategoryController extends Controller
         ]);
         $category = Category::create($request->all());
 
-        return view('Category.show',compact('category'))->with('success');
+        return view('Category.show', compact('category'))->with('success');
     }
 
     public function show(Category $category)
@@ -48,10 +48,17 @@ class CategoryController extends Controller
     {
         //
     }
+    // how to destroy object by passing id?
+    //how to pass id to controller by route in laravel?
 
-
-    public function destroy(Category $category)
+    public function destroy($id)
     {
-
+        $ca = Category::find($id);
+        if ($ca) {
+            $ca->delete();
+        }
+        // return redirect()->back()->with('success', 'Category Deleted Successfully');
+        $category = Category::all();
+        return view('Category.showall', compact('category'));
     }
 }

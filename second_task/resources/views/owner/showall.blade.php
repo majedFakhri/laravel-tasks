@@ -17,7 +17,7 @@
             @foreach($owner as $row)
                 <td>{{$row->name}}</td>
                 <td><a href="{{url('addProductToOwner/'.$row->id)}}">add Product</a></td>
-                <td > <a href="{{url('edit/'.$row->id)}}">edit</a>||<a href="{{url('deletefamily/'.$row->id)}}">delete</a></td>
+                <td > <a href="{{url('edit/'.$row->id)}}">edit</a>||<a href="{{route('owner.destroy',$row->id)}}">delete</a></td>
         </tr>
             @endforeach
     </table>
